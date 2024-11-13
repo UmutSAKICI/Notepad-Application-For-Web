@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Çevrimiçi Not Oluşturucu</title>
+
+    <!-- FAVICON EKLEMEYI UNUTMA -->
+
+    <meta
+      name="description"
+      content="Online ve Çevrimiçi not oluşturma web sitesi."
+    />
+
+    <!-- FONTS AND ICONS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/4153ce8dcc.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- -->
+
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/index/Responsive.css" />
+
+    <link rel="stylesheet" href="css/index/Section/header.css" />
+    <link rel="stylesheet" href="css/index/Section/nav.css" />
+    <link rel="stylesheet" href="css/index/Section/main.css" />
+    <link rel="stylesheet" href="css/index/Section/footer.css" />
+
+    <link rel="stylesheet" href="css/index/Popup/DeleteNotePopup.css" />
+    <link rel="stylesheet" href="css/index/Popup/NewNotePopup.css" />
+    <link rel="stylesheet" href="css/index/Popup/EditPopup.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="headerDiv">
+        <div class="headerText"><h1>ONO!</h1></div>
+        <div class="profile">
+          <a href="#"><i class="fa-solid fa-user"></i></a>
+          <div class="dropdown-content">
+            <!-- <a href="/profile">Profil</a> -->
+            <a href="/logout">Çıkış Yap</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-grid">
+      <div class="main-grid-center">
+        <div class="openAndclose">
+          <div class="open-tag tag-bar">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <div class="close-tag tag-bar">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        </div>
+
+        <section class="main-notes-db">
+          <div class="top-notes">
+            <div class="subheading">
+              <h3>Notlar</h3>
+            </div>
+            <ul>
+              <% myNotes.forEach(function(kisiNotlari, index) { %>
+              <li class="li-style">
+                <a
+                  href="#"
+                  id="<%= kisiNotlari.id %>"
+                  onclick="fetchNoteDesc('<%= kisiNotlari.id %>')"
+                >
+                  <%= (index + 1) + '. ' + kisiNotlari.notename %>
+                </a>
+              </li>
+              <% }); %>
+            </ul>
+          </div>
+          <div class="bottom-notes">
+            <h3>peyender@gmail.com for support</h3>
+          </div>
+        </section>
+
+        <section class="note-desc">
+          <div class="titleAndButtons">
+            <div class="title">
+              <input
+                class="file-name"
+                id="file-name"
+                type="text"
+                name=""
+                readonly
+                placeholder="Not seçiniz!"
+              />
+              <i class="fa-solid fa-pen" id="editNote"></i>
+            </div>
+            <div class="buttons">
+              <a id="newNote" class="newNote noteButtons">Yeni Not</a>
+              <a id="saveNot" class="saveNot noteButtons">Kaydet</a>
+              <a id="delNote" class="delNote noteButtons">Notu Sil</a>
+            </div>
+          </div>
+          <div class="content">
+            <textarea
+              class="note-textarea"
+              id="noteDesc"
+              name="notes"
+              placeholder="Bir şeyler yaz.."
+            >
+<%= notedesc %> </textarea
+            >
+          </div>
+          <div id="downloadBtn" class="download-file">
+            <a href="#"><i class="fa-solid fa-down-long"></i> Dosyayı İndir</a>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div id="new-popup" class="newNotePopUp notepopup-tag">
+      <div class="popup-content">
+        <h1>Yeni notunuzun adını giriniz</h1>
+        <p>Notunuzun ismini sonradan değiştirebilirsiniz.</p>
+        <form action="/newNote" method="post">
+          <input
+            class="name-input"
+            id="name-input"
+            name="nameinput"
+            type="text"
+            maxlength="30"
+            placeholder="Görev listesi..."
+          />
+          <input class="submit-input" type="submit" value="Oluştur!" />
+          <p class="maxLengthP-name">0 / 30</p>
+        </form>
+
+        <p class="bottom-msg">Bilgilerinizi güvenle saklıyoruz...</p>
+
+        <div id="closeNewPopup" class="closeBtn">
+          <i class="fa-solid fa-xmark closeBtn--icon"></i>
+        </div>
+      </div>
+    </div>
+
+    <div id="del-popup" class="delNotePopUp notepopup-tag">
+      <div class="popup-content">
+        <h1>Silmek istediğiniz notu seçiniz</h1>
+        <p>Silinen notlar bir daha geri gelmez!</p>
+        <form action="/deleteNote" method="post">
+          <select class="select-input" name="secenek">
+            <option value="0">Silinecek Notu Seçin</option>
+
+            <% myNotes.forEach(kisiNotlari => { %>
+            <option value="<%= kisiNotlari.id %>">
+              <%= kisiNotlari.notename %>
+            </option>
+            <% }) %>
+          </select>
+
+          <input class="submit-input" type="submit" value="Kaldır!" />
+          <p class="errorMessage"></p>
+        </form>
+
+        <p class="bottom-msg">Bilgilerinizi güvenle saklıyoruz...</p>
+
+        <div id="closeDelPopup" class="closeBtn">
+          <i class="fa-solid fa-xmark closeBtn--icon"></i>
+        </div>
+      </div>
+    </div>
+
+    <div id="edit-popup" class="editNotePopup notepopup-tag">
+      <div class="popup-content">
+        <h1>Notun adını değiştirme</h1>
+        <p>Önce değiştirilecek notun ismini seçin.</p>
+        <form action="/changeNoteName" method="post">
+          <select class="select-input" name="secenek">
+            <% myNotes.forEach(kisiNotlari => { %>
+            <option value="<%= kisiNotlari.id %>">
+              <%= kisiNotlari.notename %>
+            </option>
+            <% }) %>
+          </select>
+
+          <input
+            class="edit-name-input"
+            id="edit-name-input"
+            name="editnameinput"
+            type="text"
+            maxlength="30"
+            placeholder="Notun yeni ismi"
+          />
+
+          <input class="submit-input" type="submit" value="Değiştir!" />
+          <p class="maxLengthP-edit">0 / 30</p>
+        </form>
+
+        <p class="bottom-msg">Bilgilerinizi güvenle saklıyoruz...</p>
+
+        <div id="closeEditPopup" class="closeBtn">
+          <i class="fa-solid fa-xmark closeBtn--icon"></i>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var activedId = 0;
+
+      function fetchNoteDesc(id) {
+        activedId = id;
+        fetch(`/notes/${id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById("noteDesc").value = data.notedesc;
+            document.getElementById("file-name").value = data.notename;
+          })
+          .catch((error) => console.error("Error:", error));
+      }
+
+      document.getElementById("saveNot").addEventListener("click", function () {
+        const notedesc = document.getElementById("noteDesc").value;
+        const id = activedId;
+
+        fetch("/notes/update", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ id, notedesc }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("Success:", data);
+          })
+          .catch((error) => console.error("Error:", error));
+      });
+    </script>
+
+    <script src="js/popup.js"></script>
+    <script src="js/responsive.js"></script>
+    <script src="js/download.js"></script>
+  </body>
+</html>
+
+<!-- <footer class="footer">
+      <div class="footer-grid">
+        <div class="col-1">
+          <i class="fa-solid fa-envelope col-icon"></i>
+          <h3 class="contacts">İletişim</h3>
+          <div class="col-info">
+            <p>umutsakici@gmail.com</p>
+            <p>peyender@gmail.com</p>
+          </div>
+        </div>
+        <div class="col-2">
+          <i class="fa-solid fa-signal col-icon"></i>
+          <h3 class="contacts">Hedefimiz!</h3>
+          <div class="col-info">
+            <p>
+              Son yıllarda artan çevrimiçi not alma trafiğiyle beraber, Türkçe
+              dil desteği olan ve insanlara hızlı bir hizmet vermeyi amaçlayan;
+              Türkiye'nin en büyük bulut not depolama sistemine sahip olmayı
+              hedefleyen bir genç girişimci projesiyiz.
+            </p>
+          </div>
+        </div>
+        <div class="col-3">
+          <i class="fa-solid fa-question col-icon"></i>
+          <h3 class="contacts">Destek</h3>
+          <div class="col-info">
+            <p>
+              Eğer destekte veya tavsiyede bulunmak isterseniz dinlemeyi çok
+              isteriz. Mail adresi üzerine iletişime geçebilirsiniz.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer> -->

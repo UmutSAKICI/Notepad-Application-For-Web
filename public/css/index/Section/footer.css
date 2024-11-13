@@ -1,0 +1,45 @@
+.footer {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-grid {
+  display: grid;
+  justify-content: space-around;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr !important;
+
+  width: 100%;
+  height: 33rem;
+
+  margin: 0 auto;
+}
+
+.col-1,
+.col-2,
+.col-3 {
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  margin: 0rem 4rem 0rem 4rem;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.col-icon {
+  font-size: 2.4rem;
+}
+
+.contacts {
+  font-size: 2.4rem;
+}
+
+.col-info {
+  color: #c2c2c2;
+  font-size: 1.6rem;
+}

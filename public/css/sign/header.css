@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.header h1 {
+  font-size: 6.6rem;
+  color: white;
+  border-radius: 5px;
+  padding: 2rem;
+
+  margin-right: 1.5rem;
+}

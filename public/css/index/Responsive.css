@@ -1,0 +1,339 @@
+/* Masaüstü (büyük ekranlar) */
+@media (max-width: 120em) {
+  .headerDiv,
+  .main-grid-center {
+    width: 149rem !important;
+  }
+
+  .popup-content {
+    z-index: 999 !important;
+  }
+}
+@media (max-width: 100em) {
+  .headerDiv,
+  .main-grid-center {
+    width: 139rem !important;
+  }
+}
+
+/* Standart masaüstü */
+@media (max-width: 90em) {
+  .headerDiv,
+  .main-grid-center {
+    width: 124rem !important;
+  }
+
+  .top-notes .subheading {
+    font-size: 2.1rem !important;
+  }
+
+  .top-notes ul .li-style a {
+    font-size: 1.8rem !important;
+  }
+}
+
+/* Küçük masaüstü / Büyük laptop */
+@media (max-width: 80em) {
+  .headerDiv,
+  .main-grid-center {
+    width: 110rem !important;
+  }
+
+  .noteButtons {
+    margin-left: 1.3rem !important;
+  }
+
+  .main-notes-db {
+    padding-right: 1rem !important;
+  }
+}
+
+/* Bundan sonrası soldaki notlar liste butonuna basılıp açılacak. */
+/* Orta büyüklükte laptop */
+@media (max-width: 70em) {
+  .headerDiv,
+  .main-grid-center {
+    width: 100rem !important;
+  }
+
+  .main-grid-center {
+    grid-template-columns: 0.1fr 1fr !important;
+  }
+
+  .main-notes-db {
+    display: none !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: fixed; /* ya da absolute */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+  }
+
+  .main-notes-db > .top-notes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-notes-db > .top-notes > .subheading {
+    font-size: 6.4rem !important;
+    text-decoration: none;
+  }
+  .main-notes-db > .top-notes .li-style {
+    font-size: 4.2rem !important;
+  }
+
+  .bottom-notes {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+  }
+
+  .openAndclose {
+    display: block !important;
+    position: relative;
+  }
+
+  .openAndclose .open-tag {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .openAndclose .close-tag {
+    display: none !important;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+  }
+}
+
+/* Aralar */
+@media (max-width: 63.7em) {
+  .headerDiv,
+  .main-grid-center {
+    width: 94rem !important;
+  }
+}
+
+/* Küçük laptop / Büyük tablet (yatay) */
+@media (max-width: 60em) {
+  .headerDiv,
+  .main-grid-center {
+    width: 80rem !important;
+  }
+
+  .popup-content {
+    width: 40rem !important;
+  }
+}
+
+/* Aralar */
+@media (max-width: 54em) {
+  .headerDiv,
+  .main-grid-center {
+    width: 74rem !important;
+  }
+
+  .openAndclose .tag-bar {
+    font-size: 2.4rem !important;
+    padding: 0.8rem 1.2rem !important;
+  }
+
+  .buttons .noteButtons {
+    font-size: 1.6rem !important;
+  }
+
+  .download-file {
+    padding: 1rem !important;
+  }
+
+  .download-file > a {
+    font-size: 1.4rem !important;
+  }
+}
+
+/* Tablet (dikey) */
+@media (max-width: 48em) {
+  .headerDiv,
+  .main-grid-center {
+    width: 64rem !important;
+  }
+
+  .main-grid-center {
+    grid-template-columns: 1fr !important;
+  }
+
+  .openAndclose {
+    display: block !important;
+    position: relative;
+  }
+
+  .openAndclose .open-tag {
+    font-size: 1.6rem !important;
+    padding: 1.1rem 1.1rem !important;
+    left: 38%;
+    top: 0;
+    z-index: 100;
+  }
+
+  .openAndclose .close-tag {
+    position: fixed;
+    font-size: 1.6rem !important;
+    padding: 1.1rem 1.4rem !important;
+    left: 90%;
+    top: 5%;
+    z-index: 100;
+  }
+
+  .buttons .noteButtons {
+    font-size: 1.6rem !important;
+    padding: 0.5rem 0.5rem !important;
+  }
+
+  .download-file {
+    padding: 1rem !important;
+  }
+
+  .download-file > a {
+    font-size: 1.4rem !important;
+  }
+  .content {
+    height: 40rem !important;
+  }
+}
+
+/* Aralar */
+@media (max-width: 42em) {
+  .headerDiv,
+  .main-grid-center {
+    width: 54rem !important;
+  }
+
+  .headerText {
+    font-size: 2.6rem !important;
+  }
+  .profile {
+    padding: 1.5rem 1.7rem !important;
+  }
+
+  .titleAndButtons .title .file-name {
+    padding: 0.5rem 0.5rem !important;
+    font-weight: 500 !important;
+    width: 14rem !important;
+  }
+
+  .noteButtons {
+    margin-left: 1rem !important;
+  }
+
+  .openAndclose {
+    display: block !important;
+    position: relative;
+  }
+
+  .openAndclose .open-tag {
+    font-size: 1.6rem !important;
+    padding: 1.1rem 1.1rem !important;
+    left: 37%;
+    top: 0;
+    z-index: 100;
+  }
+
+  .content .note-textarea {
+    font-size: 1.4rem !important;
+  }
+  .content {
+    height: 40rem !important;
+  }
+
+  .popup-content {
+    width: 35rem !important;
+  }
+}
+
+/* Büyük telefonlar (dikey) */
+@media (max-width: 36.25em) {
+  .headerDiv,
+  .main-grid-center {
+    width: 44rem !important;
+  }
+
+  .openAndclose .open-tag {
+    font-size: 1.6rem !important;
+    padding: 1.1rem 1.1rem !important;
+    left: 40%;
+    top: 0;
+    z-index: 100;
+  }
+
+  .buttons .noteButtons {
+    font-size: 1.4rem !important;
+  }
+
+  .titleAndButtons .title .file-name {
+    width: 12rem !important;
+  }
+  .content {
+    height: 40rem !important;
+  }
+}
+
+/* Büyük telefonlar (dikey) */
+@media (max-width: 30em) {
+  .headerDiv,
+  .main-grid-center {
+    width: 39rem !important;
+  }
+
+  .openAndclose .open-tag {
+    font-size: 1.6rem !important;
+    padding: 1.1rem 1.1rem !important;
+    left: 36.5%;
+    top: 0;
+    z-index: 100;
+  }
+
+  .buttons .noteButtons {
+    font-size: 1.2rem !important;
+  }
+
+  .titleAndButtons .title .file-name {
+    width: 8rem !important;
+    font-size: 1.2rem;
+  }
+  .content {
+    height: 40rem !important;
+  }
+}
+
+/* Küçük telefonlar (dikey) */
+@media (max-width: 25em) {
+  .headerDiv,
+  .main-grid-center {
+    width: 35rem !important;
+  }
+  
+  .buttons .noteButtons {
+    margin-left: 0.2rem !important;
+    font-size: 1.1rem !important;
+  }
+  
+  .title i {
+    font-size: 1.2rem !important;
+  }
+  
+  .openAndclose .open-tag {
+    font-size: 1.2rem !important;
+    left: 40%;
+    padding: 1rem 1.1rem !important;
+  }
+}

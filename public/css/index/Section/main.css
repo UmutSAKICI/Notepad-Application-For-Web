@@ -1,0 +1,237 @@
+.main-grid {
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.openAndclose {
+  display: none;
+}
+
+.openAndclose .open-tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.openAndclose .close-tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.openAndclose .tag-bar {
+  font-size: 3rem;
+  padding: 1.2rem 1.6rem;
+  background-color: #1c293d;
+  border-radius: 50%;
+
+  transition: all 0.2s;
+}
+
+.openAndclose .tag-bar:hover {
+  box-shadow: 0 0 10px 5px rgb(88, 88, 88);
+  cursor: pointer;
+}
+
+.openAndclose .tag-bar:active,
+.tag-bar:focus {
+  box-shadow: 0 0 10px 5px rgb(0, 0, 0);
+  transform: translateY(1.2px);
+  cursor: pointer;
+}
+
+.main-grid-center {
+  width: 150rem;
+  margin: 0 auto;
+  padding-bottom: 8rem;
+
+  display: grid;
+  grid-template-columns: 0.25fr 1fr;
+}
+
+.main-notes-db {
+  padding-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main-notes-db .subheading {
+  font-size: 2.4rem;
+  text-decoration: underline;
+  margin-bottom: 1rem;
+}
+
+.li-style {
+  list-style: none;
+}
+
+.li-style a {
+  font-size: 2rem;
+  font-weight: normal;
+  line-height: 2;
+  color: rgb(255, 255, 255);
+
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+
+  transition: font-weight 0.5s ease;
+}
+
+.li-style a:hover {
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}
+
+.note-desc {
+  height: 72rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.titleAndButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 2rem;
+}
+
+.titleAndButtons .title .file-name {
+  flex: 1; /* Input genişliğini kapsayıcının tamamına yayar */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #222831;
+  font-weight: 700;
+}
+
+.titleAndButtons .title .file-name::placeholder {
+  color: #222831;
+  font-weight: 700;
+}
+
+.title i {
+  font-size: 1.6rem;
+  color: white;
+  background-color: #222831;
+  margin-left: 8px; /* İkon ile input arasındaki boşluğu ayarlar */
+  padding: 1rem 1rem;
+  border-radius: 50%;
+
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+
+  transition: all 0.2s;
+}
+
+.title i:hover {
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+.title i:active {
+  transform: translateY(2px);
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  justify-content: end;
+}
+
+.buttons .noteButtons {
+  font-size: 2.1rem;
+  text-decoration: none;
+  color: #fff;
+
+  outline: 3px solid #222831;
+  background-color: orange;
+  padding: 0.5rem 1rem;
+  margin-left: 2rem;
+
+  transition: all 0.2s;
+}
+
+.buttons .noteButtons:hover {
+  transform: scale(1.1);
+}
+
+.buttons .noteButtons:active {
+  transform: translateY(1.2px);
+}
+
+.buttons .newNote {
+  cursor: pointer;
+  background-color: #47754c;
+}
+
+.buttons .delNote {
+  cursor: pointer;
+  background-color: #e84545;
+}
+
+.buttons .saveNot {
+  cursor: pointer;
+  background-color: orange;
+}
+
+.buttons .saveNot:active {
+  outline: 3px solid #1A5319;
+}
+
+.content {
+  background-color: white;
+  height: 70rem;
+
+  outline: 5px solid #222831;
+
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.content .note-textarea {
+  font-size: 1.6rem;
+  font-family: "Montserrat", sans-serif;
+  background-color: white;
+
+  width: 100%;
+  height: 100%;
+  padding: 1rem 2rem;
+  line-height: 2;
+
+  resize: none; /* kullanıcının yüksekliği ve genişliği ayarlamasını engelliyoruz. */
+  box-sizing: border-box; /* eğer border-box koymazsak padding verdiğimiz için textarea dışarı taşıyor.*/
+
+  border: solid 1px #ddd;
+}
+
+.download-file {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #222831;
+  width: fit-content;
+  padding: 1.5rem;
+
+  transition: all 0.2s;
+}
+
+.download-file:hover {
+  box-shadow: 0 0 1px 1px #fff;
+}
+
+.download-file:active {
+  transform: translateY(1.5px);
+}
+
+.download-file a {
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: white;
+
+  margin-top: 2rem;
+  padding: 3rem;
+}

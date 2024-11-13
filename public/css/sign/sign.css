@@ -1,0 +1,197 @@
+.sign-in,
+.sign-up {
+  width: 29rem;
+  height: fit-content;
+
+  border-radius: 4rem;
+
+  margin-left: 5rem;
+  padding: 3rem;
+
+  background-color: white;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+  /* background: linear-gradient(to right, #ffaa4a, #ff9100); */
+}
+
+.top .sign-header {
+  font-size: 5.6rem;
+  color: #ffaa4a;
+}
+
+.top .sign-in-subheading {
+  margin-top: 3rem;
+  font-size: 2.2rem;
+  color: #222831;
+}
+
+.mid {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  margin-top: 3rem;
+}
+
+.mid input {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.mid input:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.usernameInput,
+.passwordInput,
+.emailInput {
+  color: #222831;
+  font-weight: 600;
+  font-size: 1.6rem;
+
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #22283134;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.usernameInput:focus,
+.passwordInput:focus,
+.emailInput:focus {
+  border-bottom: 2px solid #1b202734;
+  outline: none;
+}
+
+.submitBtn {
+  background-color: rgb(218, 185, 3);
+  color: #222831;
+  font-size: 1.6rem;
+  font-weight: 700;
+
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Hafif parlayan siyah gölge */
+
+  padding: 1.5rem 1rem;
+  transition: all 0.2s;
+
+  transform: translateY(0%);
+}
+.submitBtn:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.submitBtn:active {
+  box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.5); /* Hafif parlayan siyah gölge */
+
+  transform: translateY(15%);
+  cursor: pointer;
+}
+
+.invalidMessage {
+  color: orangered;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.privacy-policy {
+  font-size: 1.2rem;
+  color: rgba(102, 100, 100, 0.795);
+  text-align: center;
+  margin: 0rem auto 3rem auto;
+
+  width: 100%;
+  white-space: wrap;
+  overflow-wrap: break-word;
+}
+
+.bottom .AuthWithGoogle {
+  width: 3rem;
+  height: 3rem;
+
+  transition: all 0.2s;
+
+  background-color: white;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  padding: 1.2rem;
+
+  margin-bottom: 2.5rem;
+}
+
+.bottom .AuthWithGoogle:hover {
+  width: 5rem;
+  height: 5rem;
+
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.AuthWithGoogle img {
+  width: 100%;
+}
+
+.forget-password {
+  font-size: 1.3rem;
+  color: #222831;
+
+  transition: all 0.2s;
+  padding: 0rem 1rem;
+}
+
+.forget-password:hover {
+  font-weight: 700;
+  transform: translateY(1.2);
+  cursor: pointer;
+}
+
+.forget-password:active {
+  transform: translateY(-1.2);
+}
+
+.already-account-sign-up {
+  font-size: 1.3rem;
+  color: #222831;
+
+  transition: all 0.2s;
+  padding: 0rem 1rem;
+}
+
+.already-account-sign-up:hover {
+  font-weight: 700;
+  transform: translateY(1.2);
+  cursor: pointer;
+}
+
+.already-account-sign-up:active {
+  transform: translateY(-1.2);
+}
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* Orijinal boyutun %10 büyüğü */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.sign-in {
+  /* Diğer stilleriniz burada olabilir */
+  transition: transform 0.6s ease-in-out;
+}
+
+.scale-up {
+  animation: scaleAnimation 0.6s ease-in-out;
+}

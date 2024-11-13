@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Çevrimiçi Not Oluşturucu</title>
+
+    <!-- FAVICON EKLEMEYI UNUTMA -->
+
+    <meta
+      name="description"
+      content="Online ve Çevrimiçi not oluşturma web sitesi."
+    />
+
+    <!-- FONTS AND ICONS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/4153ce8dcc.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- -->
+
+    <link rel="stylesheet" href="css/general.css" />
+
+    <link rel="stylesheet" href="css/sign/background.css" />
+    <link rel="stylesheet" href="css/sign/header.css" />
+    <link rel="stylesheet" href="css/sign/sign.css" />
+    <link rel="stylesheet" href="css/sign/Responsive.css" />
+  </head>
+  <body>
+    <div class="overlay"></div>
+
+    <!-- <header class="header">
+      <h1>Çevrimiçi Not Oluştur</h1>
+    </header> -->
+
+    <main>
+      <section class="sign-up">
+        <div class="container">
+          <div class="top">
+            <h1 class="sign-header">
+              <i class="fa-solid fa-mug-hot"></i>
+            </h1>
+            <h3 class="sign-in-subheading">Kayıt Ol</h3>
+          </div>
+          <div class="mid">
+            <form action="/signup" method="post">
+              <input
+                class="usernameInput"
+                id="username"
+                type="text"
+                name="username"
+                placeholder="Kullanıcı Adı"
+                minlength="6"
+                required
+              />
+              <input
+                class="emailInput"
+                id="email"
+                type="email"
+                name="email"
+                placeholder="E-Mail"
+                minlength="12"
+                required
+              />
+
+              <input
+                class="passwordInput"
+                id="password"
+                type="password"
+                name="password"
+                placeholder="Şifre"
+                minlength="8"
+                required
+              />
+              <input class="submitBtn" type="submit" value="Kayıt Ol" />
+              <p style="color: orangered; font-size: 1.4rem"><%= errorMsg %></p>
+            </form>
+          </div>
+
+          <div class="bottom">
+            <p class="privacy-policy">
+              Kayıt olurken zorlanıyorsanız Google hesabınız ile giriş
+              yapabilirsiniz.
+            </p>
+
+            <a class="AuthWithGoogle" href="/auth/google">
+              <img src="images/Google-ICON.png" alt="" srcset="" />
+            </a>
+            <a
+              aria-colspan="AuthWithGoogle"
+              href="/signin"
+              class="already-account-sign-up"
+              >Zaten bir hesabınız mı var?</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <header class="header">
+        <h1>Çevrimiçi Not Oluşturucu</h1>
+      </header>
+    </main>
+
+    <footer class="footer"></footer>
+
+    <!-- <script>
+      document
+        .getElementById("signup-form")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+          const username = document.getElementById("username").value;
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+
+          const response = await fetch("/signup", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ username, email, password }),
+          });
+
+          const result = await response.json();
+
+          if (response.ok) {
+            if (result.redirect) {
+              window.location.href = result.redirect; // Redirect on success
+            }
+          } else {
+            document.getElementById("errorMsg").textContent = result.errorMsg;
+          }
+        });
+    </script> -->
+
+    <script src="js/checkPassword.js"></script>
+    <script src="js/animation.js"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 2rem;
+}
+
+.header-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 1rem;
+}
+
+.header-icon {
+  font-size: 2rem;
+  color: #1c2b2d;
+  box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.2);
+
+  border-radius: 50%;
+  padding: 1rem 1.2rem;
+}
+
+.header-text {
+  font-size: 2.1rem;
+  font-weight: 700;
+}
+
+.header-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.create-an-account {
+  color: rgb(22, 111, 199);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition: all 0.2s;
+}
+
+.create-an-account:hover {
+  font-weight: 800;
+}
+
+.create-an-account:active {
+  font-weight: 800;
+  transform: translateY(2px);
+}

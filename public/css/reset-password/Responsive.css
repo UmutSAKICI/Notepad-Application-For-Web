@@ -1,0 +1,124 @@
+@media (max-width: 170em) {
+  .main .background {
+    width: 65rem;
+  }
+}
+
+@media (max-width: 140em) {
+  .main .background {
+    width: 60rem;
+  }
+}
+
+/* Masaüstü (büyük ekranlar) */
+@media (max-width: 120em) {
+  .main .background {
+    width: 55rem;
+  }
+}
+
+/* Standart masaüstü */
+@media (max-width: 90em) {
+  .main .background {
+    width: 55rem;
+  }
+}
+
+/* Küçük masaüstü / Büyük laptop */
+@media (max-width: 80em) {
+  .main .background {
+    width: 55rem;
+  }
+}
+
+/* Orta büyüklükte laptop */
+@media (max-width: 70em) {
+  .main .background {
+    width: 55rem;
+  }
+}
+
+/* Küçük laptop / Büyük tablet (yatay) */
+@media (max-width: 60em) {
+  .main .background {
+    width: 52rem;
+  }
+}
+
+/* Tablet (dikey) */
+@media (max-width: 48em) {
+  .main .background {
+    width: 45rem;
+  }
+
+  .header-text {
+    font-size: 1.6rem !important;
+  }
+  .header-icon {
+    font-size: 1.8rem;
+  }
+}
+
+/* Büyük telefonlar (dikey) */
+@media (max-width: 36.25em) {
+  .main .background {
+    width: 38rem;
+  }
+
+  .forget-password-header {
+    font-size: 2rem !important;
+  }
+  .forget-password-subheading {
+    font-size: 1.2rem !important;
+  }
+}
+
+/* Büyük telefonlar (dikey) */
+@media (max-width: 30em) {
+  .main .background {
+    width: 35rem;
+  }
+
+  .header-text {
+    font-size: 1.4rem !important;
+  }
+  .header-icon {
+    font-size: 1.6rem;
+  }
+
+  .create-an-account {
+    font-size: 1.2rem !important;
+  }
+
+  .forget-password-header {
+    font-size: 1.8rem !important;
+  }
+  .forget-password-subheading {
+    font-size: 1.1rem !important;
+  }
+}
+
+/* Küçük telefonlar (dikey) */
+@media (max-width: 25em) {
+  .main .background {
+    width: 30rem;
+  }
+
+  .header-text {
+    font-size: 1.4rem !important;
+  }
+  .header-icon {
+    font-size: 1.6rem;
+  }
+
+  .create-an-account {
+    font-size: 1.2rem !important;
+  }
+
+  .forget-password-header {
+    font-size: 1.8rem !important;
+  }
+  .forget-password-subheading {
+    font-size: 1.1rem !important;
+  }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Çevrimiçi Not Oluşturucu</title>
+
+    <!-- FAVICON EKLEMEYI UNUTMA -->
+
+    <meta
+      name="description"
+      content="Online ve Çevrimiçi not oluşturma web sitesi."
+    />
+
+    <!-- FONTS AND ICONS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/4153ce8dcc.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- -->
+
+    <link rel="stylesheet" href="css/general.css" />
+
+    <link rel="stylesheet" href="css/reset-password/main.css" />
+    <link rel="stylesheet" href="css/reset-password/header.css" />
+    <link rel="stylesheet" href="css/reset-password/Responsive.css" />
+  </head>
+  <body>
+    <main class="main">
+      <div class="background">
+        <header class="header">
+          <div class="header-left">
+            <i class="fa-solid fa-lock header-icon"></i>
+            <h1 class="header-text">Şifremi Unuttum</h1>
+          </div>
+
+          <div class="header-right">
+            <a href="" class="create-an-account">Bir Hesap Oluştur</a>
+          </div>
+        </header>
+
+        <section class="forget-password">
+          <div class="password-topbar">
+            <i class="fa-solid fa-envelope ps-icon"></i>
+            <h1 class="forget-password-header">Şifreni mi Unuttun?</h1>
+            <p class="forget-password-subheading">
+              Kayıtlı email adresiniz ile hesabınızı geri alabilirsiniz.
+            </p>
+          </div>
+
+          <section class="password-content">
+            <form action="/send-mail" method="post">
+              <label class="email-label" for="e-for">Email</label>
+              <input
+                class="email-input"
+                id="e-for"
+                type="email"
+                name="email"
+                placeholder="john_doe@gmail.com"
+              />
+              <input
+                class="email-submit"
+                type="submit"
+                value="Şifreyi Sıfırla"
+              />
+            </form>
+          </section>
+        </section>
+
+        <section class="back-mainpage">
+          <a href="/signin">Ana Sayfaya Dön</a>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
